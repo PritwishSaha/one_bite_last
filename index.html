@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Bite — Every Bite Tells a Story</title>
+<meta name="description" content="One Bite Cafe — burgers, pizzas, wraps, waffles, coffee and more. Order online, find our menu, gallery and offers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-bite">
+    <div class="loader-glow"></div>
+    <img src="https://franchisetrade.in/wp-content/uploads/2018/12/one-bite-logo.png" alt="One Bite Logo" class="loader-logo">
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">One Bite</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#menu" class="nav-link">Menu</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="https://poki.com/en/food" class="nav-link nav-link-games" target="_blank" rel="noopener noreferrer">🎮 Games</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1600')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1600')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=1600')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=1600')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="floating-icons" aria-hidden="true">
+    <i class="fa-solid fa-pizza-slice f-icon i1"></i>
+    <i class="fa-solid fa-burger f-icon i2"></i>
+    <i class="fa-solid fa-mug-hot f-icon i3"></i>
+    <i class="fa-solid fa-ice-cream f-icon i4"></i>
+    <i class="fa-solid fa-cookie f-icon i5"></i>
+    <i class="fa-solid fa-drumstick-bite f-icon i6"></i>
+  </div>
+
+  <div class="hero-content">
+    <p class="eyebrow" data-aos="fade-up">Kolkata's favourite corner kitchen</p>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">One <span class="bite-word">Bite</span></h1>
+    <p class="hero-tagline" data-aos="fade-up" data-aos-delay="200">Every Bite Tells a Story</p>
+    <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+      <a href="#menu" class="btn btn-primary">View Menu <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span></span>
+    <p>Scroll</p>
+  </div>
+</section>
+
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="menu-container">
+    <!-- Mobile Category Toggle -->
+    <button class="mobile-category-toggle" id="mobileCategoryToggle">
+      <i class="fa-solid fa-bars"></i>
+      <span>Categories</span>
+    </button>
+
+    <!-- Left Sidebar -->
+    <aside class="menu-sidebar" id="menuSidebar">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="sidebar-close" id="sidebarClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <nav class="category-nav" id="categoryNav">
+        <!-- Categories will be populated by JavaScript -->
+      </nav>
+    </aside>
+
+    <!-- Right Content Area -->
+    <main class="menu-content" id="menuContent">
+      <div class="content-header">
+        <h2 class="category-title" id="currentCategoryTitle">Burgers</h2>
+        <div class="type-filters" id="typeFilters">
+          <button class="type-filter-btn active" data-type="all">All</button>
+          <button class="type-filter-btn" data-type="veg">Veg</button>
+          <button class="type-filter-btn" data-type="nonveg">Non-Veg</button>
+        </div>
+      </div>
+      
+      <div class="menu-grid" id="menuGrid"></div>
+      <p class="menu-empty" id="menuEmpty" hidden>No dishes available in this category.</p>
+    </main>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="offers" id="offers">
+  <div class="container">
+    <p class="section-eyebrow center">Limited Time</p>
+    <h2 class="section-title center">Special Offers</h2>
+
+    <div class="offers-grid">
+      <div class="offer-card glow" data-aos="fade-up">
+        <i class="fa-solid fa-burger offer-icon"></i>
+        <h3>Street Combo</h3>
+        <p>OB Street Burger + Fries + Coke</p>
+        <span class="offer-price">₹170</span>
+      </div>
+      <div class="offer-card glow" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-drumstick-bite offer-icon"></i>
+        <h3>Chicken Treat</h3>
+        <p>Chicken Burger + Choco Lava Cake + Coke</p>
+        <span class="offer-price">₹280</span>
+      </div>
+      <div class="offer-card glow featured" data-aos="fade-up" data-aos-delay="200">
+        <span class="offer-tag">Best Value</span>
+        <i class="fa-solid fa-people-roof offer-icon"></i>
+        <h3>Family Combo</h3>
+        <p>A full spread made to share, on the house favourites</p>
+        <span class="offer-price">₹730</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <p class="section-eyebrow center">A Peek Inside</p>
+    <h2 class="section-title center">Gallery</h2>
+
+    <div class="masonry" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <p class="section-eyebrow center">Loved By Regulars</p>
+    <h2 class="section-title center">Customer Reviews</h2>
+
+    <div class="reviews-grid">
+      <div class="review-card" data-aos="fade-up">
+        <div class="stars">★★★★★</div>
+        <p>"Amazing burgers and pizzas. The double patty is unreal."</p>
+        <span class="reviewer">— Aritra S.</span>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="stars">★★★★★</div>
+        <p>"Best cafe in town, hands down. Quick service every time."</p>
+        <span class="reviewer">— Priya M.</span>
+      </div>
+      <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="stars">★★★★★</div>
+        <p>"Loved the waffles and coffee — perfect evening hangout spot."</p>
+        <span class="reviewer">— Rohan D.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <p class="section-eyebrow">Contact</p>
+    <h2 class="section-title center">Contact Us</h2>
+    <p class="contact-desc center">Questions, reservations or orders — reach out and we'll get back to you quickly.</p>
+  </div>
+  <div class="container contact-grid">
+    <div class="contact-info" data-aos="fade-right">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2 class="section-title">Visit One Bite Jangipur</h2>
+      <p class="contact-desc">Walk in, call ahead, or order straight to your door — we're ready when you are.</p>
+
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-phone"></i> <span contenteditable="true" class="editable">+91 7407388648</span></li>
+        <li><i class="fa-brands fa-instagram"></i> @onebite_______</li>
+        <li><i class="fa-solid fa-location-dot"></i> <span contenteditable="true" class="editable">Mackenjee park road, near express bazaar, Raghunathganj, West Bengal 742225</span></li>
+        <li><i class="fa-solid fa-clock"></i> Open daily · 10:00 AM – 10:00 PM</li>
+      </ul>
+
+      <div class="contact-buttons">
+        <a href="https://instagram.com/onebite_______" target="_blank" class="btn btn-instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="tel:+917407388648" class="btn btn-phone"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a href="https://wa.me/917407388648" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="contact-map" data-aos="fade-left">
+      <div class="map-card map-card--with-info">
+        <div class="store-address">Mackenjee park road, near express bazaar, Raghunathganj, West Bengal 742225</div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d715.2207306388696!2d88.05987658082081!3d24.462361878147256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fa37b4e396973d%3A0x6af15e19c3d2bf8a!2sOne%20bite!5e1!3m2!1sen!2sin!4v1782225381423!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="store-hours">Open daily · 10:00 AM – 10:00 PM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">One Bite</span>
+      </a>
+      <p>Every bite tells a story.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://instagram.com/onebite_______" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/917407388648" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:+917407388648" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> One Bite Cafe. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="https://poki.com/en/food" class="games-float" target="_blank" rel="noopener noreferrer" aria-label="Games">🎮 Games</a>
+<a href="https://wa.me/917407388648" target="_blank" class="whatsapp-float" aria-label="WhatsApp Order"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
